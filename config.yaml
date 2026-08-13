@@ -1,0 +1,16 @@
+# 服务监听配置
+host: "0.0.0.0"
+port: 8000
+# Supabase 连接（通过 Koyeb 环境变量注入，不要写死）
+pgstore-dsn: "${PGSTORE_DSN}"
+# 目录配置（使用 /tmp 避免权限问题）
+auth-dir: "/tmp/.cli-proxy-api"
+logging-to-file: true
+logs-dir: "/tmp/logs"
+# 管理后台
+remote-management:
+  enabled: true
+  secret-key: "${MANAGEMENT_PASSWORD}"
+# 性能配置
+commercial-mode: true
+debug: false
